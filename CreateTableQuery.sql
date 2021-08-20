@@ -48,8 +48,8 @@ CREATE TABLE [dbo].[Categories]
 );
 GO
 
-IF NOT EXISTS (SELECT * FROM sys.tables t join sys.schemas s ON (t.schema_id = s.schema_id) WHERE s.name='dbo' and t.name='Campains')
-CREATE TABLE [dbo].[Campains]
+IF NOT EXISTS (SELECT * FROM sys.tables t join sys.schemas s ON (t.schema_id = s.schema_id) WHERE s.name='dbo' and t.name='Campaigns')
+CREATE TABLE [dbo].[Campaigns]
 (
  [Id]            int IDENTITY (1, 1) NOT NULL ,
  [Title]         nvarchar(max) NOT NULL ,
@@ -62,7 +62,7 @@ CREATE TABLE [dbo].[Campains]
  [EndDate]       datetime NOT NULL ,
 
 
- CONSTRAINT [PK_campains] PRIMARY KEY CLUSTERED ([Id] ASC)
+ CONSTRAINT [PK_Campaigns] PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 GO
 
@@ -126,32 +126,32 @@ CREATE NONCLUSTERED INDEX [fkIdx_66] ON [dbo].[EventComments]
 GO
 
 
-IF NOT EXISTS (SELECT * FROM sys.tables t join sys.schemas s ON (t.schema_id = s.schema_id) WHERE s.name='dbo' and t.name='CampainComments')
-CREATE TABLE [dbo].[CampainComments]
+IF NOT EXISTS (SELECT * FROM sys.tables t join sys.schemas s ON (t.schema_id = s.schema_id) WHERE s.name='dbo' and t.name='CampaignComments')
+CREATE TABLE [dbo].[CampaignComments]
 (
  [Id]        int IDENTITY (1, 1) NOT NULL ,
  [Comment]   nvarchar(max) NOT NULL ,
  [Rating]    nvarchar(max) NOT NULL ,
  [CreatedAt] datetime NOT NULL ,
- [CampainID] int NOT NULL ,
+ [CampaignID] int NOT NULL ,
  [UserID]    int NOT NULL ,
 
 
- CONSTRAINT [PK_campaincomments] PRIMARY KEY CLUSTERED ([Id] ASC),
- CONSTRAINT [FK_74] FOREIGN KEY ([CampainID])  REFERENCES [dbo].[Campains]([Id]),
+ CONSTRAINT [PK_campaigncomments] PRIMARY KEY CLUSTERED ([Id] ASC),
+ CONSTRAINT [FK_74] FOREIGN KEY ([CampaignID])  REFERENCES [dbo].[Campaigns]([Id]),
  CONSTRAINT [FK_77] FOREIGN KEY ([UserID])  REFERENCES [dbo].[Users]([Id])
 );
 GO
 
 
-CREATE NONCLUSTERED INDEX [fkIdx_75] ON [dbo].[CampainComments] 
+CREATE NONCLUSTERED INDEX [fkIdx_75] ON [dbo].[CampaignComments] 
  (
-  [CampainID] ASC
+  [CampaignID] ASC
  )
 
 GO
 
-CREATE NONCLUSTERED INDEX [fkIdx_78] ON [dbo].[CampainComments] 
+CREATE NONCLUSTERED INDEX [fkIdx_78] ON [dbo].[CampaignComments] 
  (
   [UserID] ASC
  )
