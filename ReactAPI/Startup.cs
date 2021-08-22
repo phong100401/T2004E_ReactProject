@@ -28,6 +28,7 @@ namespace ReactAPI
         {
 
             services.AddControllers();
+            services.AddTransient<Models.T2004E_ReactProjectContext, Models.T2004E_ReactProjectContext>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "ReactAPI", Version = "v1" });
