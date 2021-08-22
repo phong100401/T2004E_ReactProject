@@ -1,12 +1,7 @@
-import './App.css';
-import EventComponent from './components/EventComponent.js';
+import React, { useEffect, useState } from 'react';
 
 function App() {
-	return (
-		<div className="App">
-			<EventComponent></EventComponent>
-		</div>
-	);
+	return <div className="App"></div>;
 }
 
 export default App;
