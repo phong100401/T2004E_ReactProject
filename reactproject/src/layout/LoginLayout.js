@@ -5,3 +5,5 @@ const LoginLayout = (props) => {
 };
 
 export default LoginLayout;
+
+<LoginLayout></LoginLayout>;

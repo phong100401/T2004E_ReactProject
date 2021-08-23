@@ -19,9 +19,9 @@ import ManageEvents from '../pages/Admin/ManageEvents';
 import ManageRecipes from '../pages/Admin/ManageRecipes';
 
 const LoginCallBackRoute = {
-	path: '/login-callback',
-	layout: LoginLayout,
-	page: LoginCallBack,
+	path: '/login-callback', // URL trên browser
+	layout: LoginLayout, // LAYOUT ứng với từng ROUTE
+	page: LoginCallBack, // PAGE ứng với ROUTE đó
 };
 
 const AboutUsRoute = {

@@ -12,13 +12,21 @@ const routeWrapper = (Layout, Page) => {
 	return LayoutSwitcher;
 };
 
+/* const routeWrapper = (Layout, Page, props) => {
+	return (
+		<Layout>
+			<Page {...props} />
+		</Layout>
+	);
+}; */
+
 // Function bieu thi URL ung voi tung Trang Rieng Biet cua cac Routes
 const HealthyFoodRoutes = (props) => {
 	const { layout, page, path, exact, ...rest } = props;
 
 	return (
 		<Route exact={exact} path={path}>
-			{routeWrapper(layout, page)(rest)}
+			{routeWrapper(layout, page, rest)}
 		</Route>
 	);
 };

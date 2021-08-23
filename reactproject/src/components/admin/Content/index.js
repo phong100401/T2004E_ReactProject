@@ -5,7 +5,7 @@ const AdminContent = (props) => {
 	return (
 		<div className="content-wrapper">
 			<ContentHeader />
-			<section className="content">
+			<section className="content" style={{ minHeight: '500px' }}>
 				<div className="container-fluid">{props.children}</div>
 			</section>
 		</div>

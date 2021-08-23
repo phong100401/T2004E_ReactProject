@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { AdminSelectedColumnContext } from '../../../store/AdminSelectedColumn';
 
 const fakeColumns = [
 	{ id: 0, name: 'Dashboard', icon: 'fas fa-th nav-icon', link: 'admin-dashboard' },
@@ -24,6 +25,12 @@ const fakeColumns = [
 ];
 
 const SidebarMenu = () => {
+	const { getSelectedColumn } = useContext(AdminSelectedColumnContext);
+
+	const handleSelectedColumn = (e) => {
+		getSelectedColumn(e.target.textContent);
+	};
+
 	return (
 		// SidebarSearch Form
 		<nav className="mt-2">
@@ -35,9 +42,12 @@ const SidebarMenu = () => {
 			>
 				{fakeColumns.map((column) => (
 					<li className="nav-item" key={column.id}>
-						<Link to={column.link} className="nav-link">
-							<i className={column.icon}></i>
-							<p>
+						<Link to={column.link} className="nav-link" onClick={handleSelectedColumn}>
+							<i
+								className={`${column.icon} me-2`}
+								style={{ color: '#c2c7d0', fontSize: '20px' }}
+							></i>
+							<p className="text-light" style={{ fontSize: '16px' }}>
 								{column.name}
 								{/* <span className="right badge badge-danger">New</span> */}
 							</p>
