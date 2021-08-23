@@ -1,10 +1,13 @@
 import React from 'react';
 import ContentHeader from './ContentHeader';
 
-const AdminContent = () => {
+const AdminContent = (props) => {
 	return (
-		<div class="content-wrapper">
+		<div className="content-wrapper">
 			<ContentHeader />
+			<section className="content">
+				<div className="container-fluid">{props.children}</div>
+			</section>
 		</div>
 	);
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import AdminContent from '../components/admin/Content/index';
+// import AdminContent from '../components/admin/Content/index';
 import AdminFooter from '../components/admin/Footer';
 import AdminSidebar from '../components/admin/Sidebar/index';
 
@@ -8,7 +8,7 @@ const AdminLayout = (props) => {
 		<div className="wrapper">
 			<AdminSidebar />
 			{props.children}
-			<AdminContent />
+			{/* <AdminContent /> */}
 			<AdminFooter />
 		</div>
 	);
