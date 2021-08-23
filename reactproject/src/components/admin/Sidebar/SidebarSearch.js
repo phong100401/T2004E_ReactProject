@@ -2,6 +2,7 @@ import React from 'react';
 
 const SidebarSearh = () => {
 	return (
+		// SidebarSearch Search
 		<div className="form-inline">
 			<div className="input-group" data-widget="sidebar-search">
 				<input

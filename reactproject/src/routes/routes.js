@@ -31,7 +31,7 @@ const AboutUsRoute = {
 };
 
 const CampaignsRoute = {
-	path: '/about-us',
+	path: '/campaigns',
 	layout: UserLayout,
 	page: Campaigns,
 };

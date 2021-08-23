@@ -1,6 +1,6 @@
 import React from 'react';
-import Link from 'react-router-dom';
-import images from '../../assets';
+import { Link } from 'react-router-dom';
+import images from '../../../assets';
 
 const SidebarUser = () => {
 	return (
@@ -9,7 +9,7 @@ const SidebarUser = () => {
 				<img src={images.user_admin} className="img-circle elevation-2" alt="User" />
 			</div>
 			<div className="info">
-				<Link href="#" className="d-block">
+				<Link to="#" className="d-block">
 					Alexander Pierce
 				</Link>
 			</div>

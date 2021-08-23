@@ -1,13 +1,15 @@
 import React from 'react';
-import Sidebar from '../components/admin/Sidebar';
+import AdminContent from '../components/admin/Content/index';
+import AdminFooter from '../components/admin/Footer';
+import AdminSidebar from '../components/admin/Sidebar/index';
 
 const AdminLayout = (props) => {
 	return (
-		<div className="hold-transition sidebar-mini layout-fixed">
-			<div className="wrapper">
-				<Sidebar />
-				{props.children}
-			</div>
+		<div className="wrapper">
+			<AdminSidebar />
+			{props.children}
+			<AdminContent />
+			<AdminFooter />
 		</div>
 	);
 };
